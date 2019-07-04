@@ -4,9 +4,9 @@ Ganglia Monitor daemon module ibmpower
 This gmond module provides Shared Processor LPAR metrics (IBM Power5 and higher) on AIX and Linux on Power.
 
 The following additional metrics are defined for AIX and Linux on Power:
-capped
-* cpu_entitlement
-* cpu_in_lpar
+* `capped`
+* `cpu_entitlement`
+* `cpu_in_lpar`
 * cpu_in_machine
 * cpu_in_pool
 * cpu_pool_idle
