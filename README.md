@@ -35,7 +35,7 @@ Metric: **capped**
 
 ----
 
-Metric:	**entitlement**
+Metric:	**cpu_entitlement**
 
 **Return type:** `GANGLIA_VALUE_FLOAT`
 
@@ -45,6 +45,7 @@ Metric:	**entitlement**
 * If libperfstat returns an error code a value of 0.0 is returned.
 
 ----
+
 Metric:	**cpu_in_lpar**
 
 **Return type:** `GANGLIA_VALUE_INT`
@@ -55,4 +56,39 @@ Metric:	**cpu_in_lpar**
 * On AIX versions before v5.3 the number of configured CPUs is returned.
 * If libperfstat returns an error code a value of -1 is returned.
 
+----
 
+Metric:	**cpu_in_machine**
+
+**Return type:** `GANGLIA_VALUE_INT`
+
+* This metric returns the number of physical CPUs in the whole system.
+* As this functionality is only available with AIX 5L v5.3 or later above this must be “ifdef'ed” appropriately as libperfstat on earlier AIX versions doesn't contain this information.
+* If we are running on AIX 5L v5.3 or later the number of online physical CPUs is returned.
+* On AIX versions before v5.3 the number of CPUs is returned.
+* If libperfstat returns an error code a value of -1 is returned.
+
+----
+
+Metric:	**`cpu_in_pool`**
+
+**Return type:** `GANGLIA_VALUE_INT`
+
+* This metric returns the number of physical CPUs in the Shared Processor Pool.
+* On AIX versions before v5.3 the number of CPUs is returned.
+* If libperfstat returns an error code a value of -1 is returned.
+
+----
+
+Metric:	**cpu_pool_idle**
+
+**Return type:** `GANGLIA_VALUE_FLOAT`
+
+* This metric returns in fractional numbers of physical CPUs how much the Shared Processor Pool is idle.
+* For example, if 7 physical CPUs are in the Shared Processor Pool, a value of 4.69 might be returned meaning that only an amount of (7 – 4.69) = 2.31 physical CPUs were used since the last time this metric was measured.
+* For good numerical results the time stamps are measured in µ-seconds.
+* The Shared Processor Pool idle time is returned in nano-seconds from libperfstat.
+* On AIX versions before v5.3 no Shared Processor Pool exists and thus a value of 0.0 is returned.
+* If libperfstat returns an error code a value of 0.0 is returned.
+
+----
