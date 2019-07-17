@@ -27,7 +27,7 @@ Despite the fact that most of these metrics are mostly only useful for AIX 5L v5
 
 ----
 
-Metric: **capped**
+Metric: **`capped`**
 
 **Return type:** `GANGLIA_VALUE_STRING`
 
@@ -35,7 +35,7 @@ Metric: **capped**
 
 ----
 
-Metric:	**cpu_entitlement**
+Metric:	**`cpu_entitlement`**
 
 **Return type:** `GANGLIA_VALUE_FLOAT`
 
@@ -46,7 +46,7 @@ Metric:	**cpu_entitlement**
 
 ----
 
-Metric:	**cpu_in_lpar**
+Metric:	`**cpu_in_lpar**`
 
 **Return type:** `GANGLIA_VALUE_INT`
 
