@@ -1,7 +1,7 @@
 # ganglia-mod_ibmpower
 Ganglia Monitor daemon module ibmpower
 
-This gmond module provides Shared Processor LPAR metrics (IBM Power5 and higher) on AIX and Linux on Power.
+This gmond module provides Shared Processor LPAR metrics (IBM POWER5 and higher) on AIX and Linux on Power.
 
 The following additional metrics are defined for AIX and Linux on Power:
 * `capped`
@@ -31,7 +31,7 @@ Metric: **`capped`**
 
 **Return type:** `GANGLIA_VALUE_STRING`
 
-* This metric either returns “**yes**” if the system is a POWER5 Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
+* This metric either returns “**yes**” if the system is a POWER Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
 
 ----
 
@@ -51,7 +51,7 @@ Metric:	**`cpu_in_lpar`**
 **Return type:** `GANGLIA_VALUE_INT`
 
 * This metric returns the number of CPUs the OS sees in the system.
-* In a POWER5 Shared Processor LPAR this returns the number of logical CPUs.
+* In a POWER Shared Processor LPAR this returns the number of logical CPUs.
 * If we are running on AIX 5L v5.3 or later the number of online CPUs is returned.
 * On AIX versions before v5.3 the number of configured CPUs is returned.
 * If libperfstat returns an error code a value of -1 is returned.
