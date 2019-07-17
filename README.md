@@ -33,3 +33,13 @@ Metric: **capped**
 
 * This metric either returns “**yes**” if the system is a POWER5 Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
 
+----
+
+Metric:	**entitlement**
+
+**Return type:** `GANGLIA_VALUE_FLOAT`
+
+* This function returns the Capacity Entitlement of the system in units of physical CPUs.
+* If we are running on AIX 5L v5.3 or later a distinction must be made whether this is a Shared Processor LPAR or not as otherwise the number of online CPUs is returned.
+* On AIX versions before v5.3 the number of available CPUs is returned.
+* If libperfstat returns an error code a value of 0.0 is returned.
