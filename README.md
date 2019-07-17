@@ -30,7 +30,5 @@ Despite the fact that most of these metrics are mostly only useful for AIX 5L v5
 **Metric:   capped**
 
 **Return type:** `GANGLIA_VALUE_STRING`
-
-**Notion:**
 * This metric either returns “**yes**” if the system is a POWER5 Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
 
