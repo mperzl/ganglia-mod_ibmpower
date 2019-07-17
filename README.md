@@ -25,10 +25,11 @@ The following additional metrics are defined for AIX and Linux on Power:
 
 Despite the fact that most of these metrics are mostly only useful for AIX 5L v5.3 running in a Shared Processor LPAR, some "reasonable" values must be returned if not running in that scenario.
 
--------
+----
 
 **Metric:   capped**
 
 **Return type:** `GANGLIA_VALUE_STRING`
+
 * This metric either returns “**yes**” if the system is a POWER5 Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
 
