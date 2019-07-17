@@ -5,7 +5,7 @@ This gmond module provides Shared Processor LPAR metrics (IBM POWER5 and higher)
 
 **License:** BSD 3-Clause "New" or "Revised" License
 
-The following additional metrics are defined for AIX and Linux on Power:
+The following additional metrics are provided for AIX and Linux on Power:
 * `capped`
 * `cpu_entitlement`
 * `cpu_in_lpar`
