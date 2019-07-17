@@ -162,7 +162,7 @@ Metric:	**`lpar_num`**
 * This metric returns the partition ID of the LPAR as defined on the Hardware Management Console (HMC) or some reasonable message otherwise.
 * If we are running on AIX 5L v5.3 or later libperfstat can be used to obtain that information.
 * On AIX versions before v5.3 ulibperfstat does not contain that information and therefore it must be obtained via the `uname` command.
-* If libperfstat or uname return an error code a value of -1 is returned.
+* If libperfstat or `uname` return an error code a value of -1 is returned.
 
 ----
 
