@@ -27,7 +27,7 @@ Despite the fact that most of these metrics are mostly only useful for AIX 5L v5
 
 ----
 
-**Metric:   capped**
+Metric: **capped**
 
 **Return type:** `GANGLIA_VALUE_STRING`
 
