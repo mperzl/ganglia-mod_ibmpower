@@ -31,7 +31,7 @@ Metric: **`capped`**
 
 **Return type:** `GANGLIA_VALUE_STRING`
 
-* This functions either returns “**yes**” if the system is a POWER5 Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
+* This metric either returns “**yes**” if the system is a POWER5 Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
 
 ----
 
@@ -39,7 +39,7 @@ Metric:	**`cpu_entitlement`**
 
 **Return type:** `GANGLIA_VALUE_FLOAT`
 
-* This function returns the Capacity Entitlement of the system in units of physical cores.
+* This metric returns the Capacity Entitlement of the system in units of physical cores.
 * If we are running on AIX 5L v5.3 or later a distinction must be made whether this is a Shared Processor LPAR or not as otherwise the number of online CPUs is returned.
 * On AIX versions before V5.3 the number of available CPUs is returned.
 * If libperfstat returns an error code a value of 0.0 is returned.
@@ -63,7 +63,6 @@ Metric:	**`cpu_in_machine`**
 **Return type:** `GANGLIA_VALUE_INT`
 
 * This metric returns the number of physical CPUs in the whole system.
-* As this functionality is only available with AIX 5L v5.3 or later above this must be “ifdef'ed” appropriately as libperfstat on earlier AIX versions doesn't contain this information.
 * If we are running on AIX 5L v5.3 or later the number of online physical CPUs is returned.
 * On AIX versions before v5.3 the number of CPUs is returned.
 * If libperfstat returns an error code a value of -1 is returned.
@@ -141,7 +140,7 @@ Metric:	**`lpar`**
 
 **Return type:** `GANGLIA_VALUE_STRING`
 
-* This metric either returns “yes” if the system is a LPAR or “no” otherwise.
+* This metric either returns “**yes**” if the system is a LPAR or “**no**” otherwise.
 
 ----
 
@@ -151,8 +150,8 @@ Metric:	**`lpar_name`**
 
 * This metric returns the name of the LPAR as defined on the Hardware Management Console (HMC) or some reasonable message otherwise.
 * If we are running on AIX 5L v5.3 or later libperfstat can be used to obtain that information.
-* On AIX versions before v5.3 unfortunately libperfstat doesn't contain that information and therefore this must be obtained via the `uname` command.
-* If libperfstat or uname return an error code an appropriate error message is returned.
+* On AIX versions before v5.3 libperfstat doesn't contain that information and therefore this must be obtained via the `uname` command.
+* If libperfstat or `uname` return an error code an appropriate error message is returned.
 
 ----
 
@@ -162,74 +161,54 @@ Metric:	**`lpar_num`**
 
 * This metric returns the partition ID of the LPAR as defined on the Hardware Management Console (HMC) or some reasonable message otherwise.
 * If we are running on AIX 5L v5.3 or later libperfstat can be used to obtain that information.
-* On AIX versions before v5.3 unfortunately libperfstat doesn't contain that information and therefore this must be obtained via the `uname` command.
+* On AIX versions before v5.3 ulibperfstat does not contain that information and therefore it must be obtained via the `uname` command.
 * If libperfstat or uname return an error code a value of -1 is returned.
 
 ----
 
-Metric:	oslevel
+Metric:	**`oslevel`**
 
-Return type:
-    • GANGLIA_VALUE_STRING
+**Return type:** `GANGLIA_VALUE_STRING`
 
-Notion:
-    • This metric returns the version string as provided by the AIX command 'oslevel'.
+* This metric returns the version string as provided by the AIX command `oslevel`.
+* Since AIX 5L v5.3 Technology Level 04 the oslevel command has an additional switch “`-s`”. First, we try to run `oslevel -s` and if that fails then we try to run `oslevel -r`.
+* This metric is retrieved only once and then “cached” for subsequential calls.
+* If `oslevel` return an error code an appropriate error message is returned.
 
-Remarks:
-    • The AIX command 'oslevel' must be used to obtain that metric.
-    • Since AIX 5L v5.3 Technology Level 04 the oslevel command has an additional switch “-s”. First, we try to run 'oslevel -s' and if that fails then we try to run 'oslevel -r'.
-    • This metric is retrieved only once and then “cached” for subsequential calls.
-    • If oslevel return an error code an appropriate error message is returned.
+----
 
+Metric:	**`serial_num`**
 
-Metric:	serial_num
+**Return type:** `GANGLIA_VALUE_STRING`
 
-Return type:
-    • GANGLIA_VALUE_STRING
+* This metric returns the serial number of the system as provided by the AIX command `uname`.
+* This metric is retrieved only once and then “cached” for subsequential calls.
+* If `uname` return an error code an appropriate error message is returned.
 
-Notion:
-    • This metric returns the serial number of the system as provided by the AIX command 'uname'.
+----
 
-Remarks:
-    • The AIX command 'uname' must be used to obtain that metric.
-    • This metric is retrieved only once and then “cached” for subsequential calls.
-    • If uname return an error code an appropriate error message is returned.
+Metric:	**`smt`**
 
-Metric:	smt
+Return type:** `GANGLIA_VALUE_STRING`
 
-Return type:
-    • GANGLIA_VALUE_STRING
+* This metric either returns “**yes**” if SMT is enabled or “**no**” otherwise.
+* If libperfstat returns an error code an appropriate error message is returned.
 
-Notion:
-    • This metric either returns “yes” if SMT is enabled or “no” otherwise. 
+----
 
-Remarks:
-    • As this functionality is only available with AIX 5L v5.3 or later this must be “ifdef'ed” appropriately as libperfstat on earlier AIX versions doesn't contain this information.
-    • If libperfstat returns an error code an appropriate error message is returned.
+Metric:	**`splpar`**
 
+Return type:** `GANGLIA_VALUE_STRING`
 
-Metric:	splpar
+* This metric either returns “**yes**” if the system is running in a shared processor LPAR or “**no**” otherwise. 
+* If libperfstat returns an error code an appropriate error message is returned.
 
-Return type:
-    • GANGLIA_VALUE_STRING
+----
 
-Notion:
-    • This metric either returns “yes” if the system is running in a shared processor LPAR or “no” otherwise. 
+Metric:	**`weight`**
 
-Remarks:
-    • As this functionality is only available with AIX 5L v5.3 or later this must be “ifdef'ed” appropriately as libperfstat on earlier AIX versions doesn't contain this information.
-    • If libperfstat returns an error code an appropriate error message is returned.
+**Return type:** `GANGLIA_VALUE_INT`
 
-Metric:	weight
-
-Return type:
-    • GANGLIA_VALUE_INT
-
-Notion:
-    • This metric returns the weight of the LPAR running in uncapped mode.
-
-Remarks:
-    • As this functionality is only available with AIX 5L v5.3 or later this must be “ifdef'ed” appropriately as libperfstat on earlier AIX versions doesn't contain this information.
-    • On AIX versions before v5.3 a value of -1 is returned.
-    • If libperfstat returns an error code a value of -1 is returned.
-
+* This metric returns the weight of the LPAR running in uncapped mode.
+* On AIX versions before v5.3 a value of -1 is returned.
+* If libperfstat returns an error code a value of -1 is returned.
