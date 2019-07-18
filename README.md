@@ -24,7 +24,7 @@ The following additional metrics are provided for AIX and Linux on Power:
 * `splpar`
 * `weight`
 
-As most of these metrics are only useful for AIX V5.3 or higher running in a Shared Processor LPAR, some "reasonable" values must be returned if not running in such a scenario.
+Many of these metrics are most useful for AIX V5.3 or higher and Linux on Power running in a Shared Processor LPAR, some "reasonable" values must be returned if not running in such a scenario.
 
 ## Obtaining binary versions
 
