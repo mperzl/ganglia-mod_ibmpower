@@ -32,7 +32,7 @@ Downloads of binary versions for AIX and Linux on Power are available at:
 
     http://www.perzl.org/aix/index.php?n=Main.Ganglia
 
-----
+## Description of individual metrics
 
 Metric: **`capped`**
 
