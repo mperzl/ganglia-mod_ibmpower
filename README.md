@@ -32,7 +32,7 @@ Metric: **`capped`**
 
 **Return type:** `GANGLIA_VALUE_STRING`
 
-* This metric either returns “**yes**” if the system is a POWER Shared Processor LPAR which is running in capped mode or “**no**” otherwise. 
+* This metric either returns **`yes`** if the system is a POWER Shared Processor LPAR which is running in capped mode or **`no`** otherwise. 
 
 ----
 
