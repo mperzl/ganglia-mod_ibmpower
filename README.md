@@ -26,6 +26,13 @@ The following additional metrics are provided for AIX and Linux on Power:
 
 As most of these metrics are only useful for AIX V5.3 or higher running in a Shared Processor LPAR, some "reasonable" values must be returned if not running in such a scenario.
 
+**Obtaining binary versions**
+-----------------------------
+
+Downloads of binary versions for AIX and Linux on Power are available at:
+
+    http://www.perzl.org/aix/index.php?n=Main.Ganglia
+
 ----
 
 Metric: **`capped`**
